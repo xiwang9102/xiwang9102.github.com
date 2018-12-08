@@ -1,0 +1,14 @@
+电脑软件
+
+fg.exe     自由门 7.64（翻墙）
+u.exe     无界浏览 18.6（翻墙）
+
+安卓手机软件
+
+um4.6a.apk     无界一点通 um4.6a（翻墙）
+fgma.apk     自由门 3.2（翻墙）
+iNTD_TV.apk     新唐人电视 2.1.12（翻墙收看新唐人电视直播）
+lithium.apk     锂 EPUB 阅读器（看 EPUB 电子书）
+adobe.apk     Adobe PDF（看 PDF 文件）
+vlc.apk     VLC 播放器（可播放各种格式的音频和视频文件）
+rar-android.apk     解压软件
