@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="full-screen" content="yes">
+	<meta name="x5-full-screen" content="yes">
+	<link rel="stylesheet" href="css/pure-min.css">
+    <script src='jwplayer/jwplayer.js'></script>
+</head>
+<body>
+	<div id="player">Loading the player...</div>
+    <script>
+	    function getUrlVar() {
+		    var resourceStr = window.location.href.split("?resource=")[1]
+		    
+		    return decodeURI(resourceStr);
+		}
+		
+		function getResource() {
+			return 'media/' + getUrlVar()
+		}
+		
+		function openResource() {
+			window.open('player_html5.html?resource=' + getUrlVar(), '_self')
+		}
+	  function videoplay()
+    {  
+        // Setup the player
+        jwplayer(player).setup({
+            file: getResource(),
+            width: "100%"
+        });
+        jwplayer(player).play();
+      }
+      videoplay();
+    </script>
+    
+   
+    <a>如果无法播放，请尝试使用HTML5播放。</a>
+    <a class="pure-button pure-button-primary" style="font-size: small; width: 9em; margin: 0.2em 0.5em 0.2em 0.5em;" href="#" onclick="openResource();">
+										<center><i class="fa fa-play-circle" style="font-size:1.3em; color:#ffffff;"></i></center>
+										HTML5 播放
+									</a>
+</body>
+</html>

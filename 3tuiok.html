@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+    <title>三退</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/side-menu.css">
+</head>
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading">真相驿站</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="index.html" class="pure-menu-link"><i class="menu-icon fa fa-home"></i>主页</a></li>
+                <li class="pure-menu-item"><a href="category/1_letter/index1.html" class="pure-menu-link"><i class="menu-icon fa fa-envelope-o"></i>给有缘人</a></li>
+                <li class="pure-menu-item"><a href="category/2_truth/index2.html" class="pure-menu-link"><i class="menu-icon fa fa-newspaper-o"></i>真相</a></li>
+                <li class="pure-menu-item"><a href="category/3_download/index3.html" class="pure-menu-link"><i class="menu-icon fa fa-download"></i>下载</a></li>
+                <li class="pure-menu-item"><a href="category/4_video/index4.html" class="pure-menu-link"><i class="menu-icon fa fa-film"></i>视频</a></li>
+                <li class="pure-menu-item"><a href="category/5_audio/index5.html" class="pure-menu-link"><i class="menu-icon fa fa-headphones"></i>音频</a></li>
+                <li class="pure-menu-item"><a href="category/6_ebook/index6.html" class="pure-menu-link"><i class="menu-icon fa fa-book"></i>电子书</a></li>
+                <li class="pure-menu-item"><a href="category/7_santui/index7.html" class="pure-menu-link pure-menu-selected"><i class="menu-icon fa fa-pencil-square-o"></i>三退</a></li>
+                <li class="pure-menu-item"><a href="category/8_gfw/index8.html" class="pure-menu-link"><i class="menu-icon fa fa-paper-plane-o"></i>翻墙软件</a></li>
+                <li class="pure-menu-item"><a href="category/9_msg/index9.html" class="pure-menu-link"><i class="menu-icon fa fa-commenting-o"></i>留言</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+	    
+	    <img class="wide" src="category/7_santui/banner7.jpg">
+	    <img id="logo" src="logo.png">
+		
+		<div id="header">
+            <h1>三退保平安</h1>
+            <h2>谢谢！我们将复查您提交的三退数据，并帮您在海外大纪元网站登记有效的三退，请您记住今天的日期。</h2>
+        </div>
+		
+		<center>
+			<br><br>
+			<font color=green style="font-size: large">
+				<script language=javascript>
+					function djb(s)
+					{
+						var n = 5381;
+						for (var i=s.length-1; i>=0; --i)
+						{
+							n += (n << 5) + s.charCodeAt(i);
+							if (n > 0xffffff) n &= 0xffffff;
+						}	
+						return n;
+					}
+					
+					function chk()
+					{
+						var p=location.search;
+						if (p.indexOf('?data=')==0)
+						{
+							var n=p.lastIndexOf('&v=');
+							if (n > 0)
+							{
+								var s=p.substring(6, n);
+								if (djb(s)==parseInt(p.substr(n+3))) return decodeURIComponent(window.atob(s)).replace(/;/g, '<br>');
+							}
+						}
+						return '数据无效！';
+					}
+					document.write(chk());
+				</script>
+			</font>
+			<br><br>
+			<div id="header">
+            		<h1 style="font-size: large">
+	            		请您牢记：
+	            		<br>
+	            		<a style="font-weight:bold;color:#0078e7;">“法轮大法好！真善忍好！”</a>
+	            		<br>
+	            		记住他在关键时刻，可以使您：逢凶化吉，遇难成祥！
+	            	</h1>
+	            	<br>
+	            	<a class="pure-button pure-button-primary" href="category/9_msg/index9.html">我要留言</a>
+	            	<br><br>
+        		</div>
+			<br><br>
+            <a class="pure-button" href="index.html">主页</a>
+            <br>
+            <br>
+		</center>
+    </div>
+</div>
+<script src="js/ui.js"></script>
+</body>
+</html>

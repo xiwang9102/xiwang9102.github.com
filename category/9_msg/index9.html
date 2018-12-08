@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+    <title>留言</title>
+    <link rel="stylesheet" href="../../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/pure-min.css">
+    <link rel="stylesheet" href="../../css/side-menu.css">
+    <link rel="stylesheet" href="../../css/loading.css">
+</head>
+<body>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading">真相驿站</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="../../index.html" class="pure-menu-link"><i class="menu-icon fa fa-home"></i>主页</a></li>
+                <li class="pure-menu-item"><a href="../1_letter/index1.html" class="pure-menu-link"><i class="menu-icon fa fa-envelope-o"></i>给有缘人</a></li>
+                <li class="pure-menu-item"><a href="../2_truth/index2.html" class="pure-menu-link"><i class="menu-icon fa fa-newspaper-o"></i>真相</a></li>
+                <li class="pure-menu-item"><a href="../3_download/index3.html" class="pure-menu-link"><i class="menu-icon fa fa-download"></i>下载</a></li>
+                <li class="pure-menu-item"><a href="../4_video/index4.html" class="pure-menu-link"><i class="menu-icon fa fa-film"></i>视频</a></li>
+                <li class="pure-menu-item"><a href="../5_audio/index5.html" class="pure-menu-link"><i class="menu-icon fa fa-headphones"></i>音频</a></li>
+                <li class="pure-menu-item"><a href="../6_ebook/index6.html" class="pure-menu-link"><i class="menu-icon fa fa-book"></i>电子书</a></li>
+                <li class="pure-menu-item"><a href="../7_santui/index7.html" class="pure-menu-link"><i class="menu-icon fa fa-pencil-square-o"></i>三退</a></li>
+                <li class="pure-menu-item"><a href="../8_gfw/index8.html" class="pure-menu-link"><i class="menu-icon fa fa-paper-plane-o"></i>翻墙软件</a></li>
+                <li class="pure-menu-item"><a href="index9.html" class="pure-menu-link pure-menu-selected"><i class="menu-icon fa fa-commenting-o"></i>留言</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+	    
+	    <img class="wide" src="banner9.jpg">
+	    <img id="logo" src="../../logo.png">
+		
+		<div id="header">
+            <h2>如果您要反馈，请在下面留言。<!-- <br>如果需要交流，请留下您的联系方式（电话/邮件/QQ/微信等）。 --></h2>
+        </div>
+		
+        <center>
+        		<table class="list">
+				<tbody>
+				    <tr>      
+				        <td>
+					        <textarea id=taMsg rows=6 style="width:100%;" oninput="charNum();" onpropertychange="charNum();"></textarea><br><br>
+				        </td>
+				    </tr>
+				    <tr>      
+				        <td>
+					        <center>
+					        <button class="pure-button pure-button-primary" onclick="submitMsg();">提交留言</button> &nbsp; <span id="spChar"></span><br><br>
+					        </center>
+				        </td>
+				    </tr>
+				</tbody>
+        		</table>
+        		
+        		<div id="header"></div>
+        		<br>
+            <a class="pure-button" href="../../index.html">主页</a>
+            <a class="pure-button pure-button-primary" href="../7_santui/index7.html">我要三退</a>
+            <br>
+            <br>
+        </center>    
+    </div>
+</div>
+<div class="sk-spinner-circle" id="loading" style="display: none">
+        <div class="sk-circle1 sk-circle"></div>
+        <div class="sk-circle2 sk-circle"></div>
+        <div class="sk-circle3 sk-circle"></div>
+        <div class="sk-circle4 sk-circle"></div>
+        <div class="sk-circle5 sk-circle"></div>
+        <div class="sk-circle6 sk-circle"></div>
+        <div class="sk-circle7 sk-circle"></div>
+        <div class="sk-circle8 sk-circle"></div>
+        <div class="sk-circle9 sk-circle"></div>
+        <div class="sk-circle10 sk-circle"></div>
+        <div class="sk-circle11 sk-circle"></div>
+        <div class="sk-circle12 sk-circle"></div>
+      </div>
+
+<script src="../../js/ui.js"></script>
+<script>
+function djb(s)
+{
+	var n = 5381;
+	for (var i=s.length-1; i>=0; --i) {n += (n << 5) + s.charCodeAt(i);if (n > 0xffffff) n &= 0xffffff;}
+	return n;
+}
+	
+var MAXNUM = 100;
+String.prototype.trim=function() {return this.replace(/^\s+|\s+$/g, "");}
+let isSaveing=false
+function submitMsg()
+{
+	var s = taMsg.value.trim();
+	var n = s.length;
+	if (n == 0) {alert("请输入留言！");return;}
+	if (n > MAXNUM) {alert("留言不能超过 "+MAXNUM+" 字！");return;}
+	if (!confirm("提交留言：\n\n"+s)) return;
+    s = encodeURIComponent(s.replace(/\n/g, " "));
+    if(isSaveing){
+          return
+		}
+		isSaveing=true
+    let body=s
+    document.getElementById('loading').style.display=''
+        let ok=function(){
+        console.log('ok')
+        isSaveing=false
+        let s2=window.btoa(s)
+        document.getElementById('loading').style.display='none'
+		window.location.href = "../../msgok.html?data="+s2+"&v="+djb(s2);
+      }
+      let error=function(e){
+        console.log('error')
+        console.log(e)
+		isSaveing=false
+        document.getElementById('loading').style.display='none'
+		alert('网络开小差,请稍后再试!')
+	  }
+	  save(body,ok,error)
+	
+}
+
+function charNum() {spChar.innerHTML=taMsg.value.trim().length + "/" + MAXNUM;}
+	
+</script>
+<script src="../../save/config.js"></script>
+<script src="../../save/octokat-min.js"></script>
+<script>
+  function save(body,ok,error) {
+      apiToken=window.atob(apiToken)
+      gistId=window.atob(gistId)
+    //   console.log('apiToken:',apiToken)
+    //   console.log('gistId:',gistId)
+      var octo = new Octokat({
+      token: apiToken
+	})
+	let uid=localStorage.getItem('uid')
+	if(uid===null||uid===undefined||uid===''){
+	   uid=guid()
+	   localStorage.setItem('uid',uid)
+	}
+	body+=' '+getCurrDate()+','+uid
+	// console.log('body:',body)
+	body=window.btoa(body)
+    octo.gists(gistId).comments.create({
+        "body": body
+      })
+      .then(() => {
+        // Done!
+        if(ok)ok()
+      }).catch(function (e) {
+        if(error)error(e)
+      })
+	}
+    
+    Date.prototype.Format = function(fmt)   
+{    
+  var o = {   
+    "M+" : this.getMonth()+1,                 //月份   
+    "d+" : this.getDate(),                    //日   
+    "h+" : this.getHours(),                   //小时   
+    "m+" : this.getMinutes(),                 //分   
+    "s+" : this.getSeconds(),                 //秒   
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度   
+    "S"  : this.getMilliseconds()             //毫秒   
+  };   
+  if(/(y+)/.test(fmt))   
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));   
+  for(var k in o)   
+    if(new RegExp("("+ k +")").test(fmt))   
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+  return fmt;   
+} 
+
+function getCurrDate() {
+	let t=new Date().Format("yyyy-MM-dd hh:mm:ss S");
+	return t;
+}
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+</script>
+</body>
+</html>

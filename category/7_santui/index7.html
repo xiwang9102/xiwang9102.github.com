@@ -1,0 +1,715 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+    <title>三退</title>
+    <link rel="stylesheet" href="../../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/pure-min.css">
+	<link rel="stylesheet" href="../../css/side-menu.css">
+	<link rel="stylesheet" href="../../css/loading.css">
+</head>
+<body>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading">真相驿站</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="../../index.html" class="pure-menu-link"><i class="menu-icon fa fa-home"></i>主页</a></li>
+                <li class="pure-menu-item"><a href="../1_letter/index1.html" class="pure-menu-link"><i class="menu-icon fa fa-envelope-o"></i>给有缘人</a></li>
+                <li class="pure-menu-item"><a href="../2_truth/index2.html" class="pure-menu-link"><i class="menu-icon fa fa-newspaper-o"></i>真相</a></li>
+                <li class="pure-menu-item"><a href="../3_download/index3.html" class="pure-menu-link"><i class="menu-icon fa fa-download"></i>下载</a></li>
+                <li class="pure-menu-item"><a href="../4_video/index4.html" class="pure-menu-link"><i class="menu-icon fa fa-film"></i>视频</a></li>
+                <li class="pure-menu-item"><a href="../5_audio/index5.html" class="pure-menu-link"><i class="menu-icon fa fa-headphones"></i>音频</a></li>
+                <li class="pure-menu-item"><a href="../6_ebook/index6.html" class="pure-menu-link"><i class="menu-icon fa fa-book"></i>电子书</a></li>
+                <li class="pure-menu-item"><a href="index7.html" class="pure-menu-link pure-menu-selected"><i class="menu-icon fa fa-pencil-square-o"></i>三退</a></li>
+                <li class="pure-menu-item"><a href="../8_gfw/index8.html" class="pure-menu-link"><i class="menu-icon fa fa-paper-plane-o"></i>翻墙软件</a></li>
+                <li class="pure-menu-item"><a href="../9_msg/index9.html" class="pure-menu-link"><i class="menu-icon fa fa-commenting-o"></i>留言</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+	    
+	    <img class="wide" src="banner7.jpg">
+	    <img id="logo" src="../../logo.png">
+		
+		<div id="header">
+            <h1>三退保平安</h1>
+            <h2 style="font-size: medium;text-align: left">1. 三退可使用真名或化名。<br>2. 曾入过党团队或小时候戴过红领巾都需要退。<br>3. 帮亲朋好友或其他人三退必须征得本人同意。<br>4. 已做过三退的请勿重复三退。</h2>
+            <a class="pure-button pure-button-primary" href="index7_1.html">
+				<i class="fa fa-list-ul">&nbsp;为什么要三退？</i>
+			</a>
+			<br><br>
+			<a class="pure-button button-secondary" href="../9_msg/index9.html">
+				<i class="fa fa-commenting-o">&nbsp;我要留言</i>
+			</a>
+			<br><br>
+        </div>
+		
+		<center>
+			<table class="list">
+				<tbody>
+				    <tr>      
+				        <td>
+					        <br>
+				        		<span style="font-weight:bold; color:#0078e7">步骤一：</span>
+				        		<br>请输入化名或点击选择化名<br><br>
+							<input id="edtAlias" style="font-size:large;color:blue;width:5em;">
+							<span id="spQuit" style="font-size:large;color:green"></span>
+							<button class="pure-button pure-button-primary" style="float:right;margin-top:-0.2em;" onclick="createAlias();">
+								<i class="fa fa-random">&nbsp;随机化名</i>
+							</button>
+							<br><br>
+							<center>
+								<script language=javascript>
+									function setAlias(s) {edtAlias.value=s;}
+									function init()
+									{
+										var s="";
+										for (var i=0;i<6;++i) s+= "<button class='pure-button santui' id=btn" +i+ " onclick='setAlias(innerHTML)'></button>";
+										document.write(s);	
+									}
+									init();
+								</script>
+							</center>
+						</td>    
+	    				</tr>
+					<tr>
+						<td>
+							<br><br>
+							<span style="font-weight:bold; color:#0078e7">步骤二：</span>
+							<br>通过按钮选择你要三退的类别,可以多选<br><br>
+							<center>
+								<button class="pure-button santui button-error" onclick="tui(1);">退党</button>
+						    		<button class="pure-button santui button-warning" onclick="tui(2);">退团</button>
+						    		<button class="pure-button santui button-secondary" onclick="tui(4);">退队</button>
+							</center>   
+	       				</td> 
+      				</tr>
+	  				<tr>
+	  					<td>
+		  					<br><br>
+	  						<span style="font-weight:bold; color:#0078e7">步骤三：</span>
+	  						<br>提交三退即会帮助您正式三退，多人三退请重复提交。<br>
+					    		<select id="selList" multiple="true" size=5 style="width:100%;margin:0;padding:0;border:1;display:none"></select>
+	  					<!--
+	  						<center>
+						    		<button class="pure-button santui pure-button-primary" onclick="add();">添加</button>
+						    		<button class="pure-button santui" onclick="del();">删除</button>
+						    		<button class="pure-button santui" onclick="clean();">清空</button>
+					    		</center>
+					    -->
+       					</td>
+       				</tr>     
+				    <tr>            
+				        <td>
+					        
+<!--
+				        		<span style="font-weight:bold; color:#0078e7">步骤四：</span>
+				        		选择"提交",即将添加好的表单提交到系统,完成三退所有动作.<br>
+				        		<br>
+				        		最终提交名单,一次最多5个<br>
+							<textarea id="textid" rows=5 style="width:100%;margin:0;padding:0;border:1;"></textarea>
+							<br><br>
+-->
+				        		<br><br>
+				        		<center>
+								<button class="pure-button pure-button-primary" onclick="submit();">
+									提交三退 <span id=spNum></span>
+								</button>
+								
+							</center>
+				        </td>
+				    </tr>
+				</tbody>
+			</table>
+			
+			<br>
+			<div id="header">
+            <h2 style="font-size: medium">大纪元郑重声明<br><br>广大的中国民众：共产党的末日就要到了。但是这个邪恶的党（魔教）在历史上却对众生、对神佛犯下了滔天大罪，神一定要清算这个恶魔。<br><br>如果有一天，神指使人类的谁对共产党清算时，也一定不会放过那些所谓坚定的邪恶党徒。我们郑重声明：所有参加过共产党与共产党其它组织的 (被邪恶打上兽的印记的)人，赶快退出，抹去邪恶的印记。一旦谁对这个魔教清算时，大纪元储存的记录可以为声明退出共产党和共产党其它组织的人作证。<br><br>天网恢恢，善恶分明；苦海有边，生死一念。曾被历史上最邪恶的魔教所欺骗的人，曾被邪恶打上兽的印记的人，请抓住这稍纵即逝的良机！<br><br>大纪元<br>
+2005年1月12日</h2>
+        </div>
+			
+        		<br><br>
+            <a class="pure-button" href="../../index.html">主页</a>
+            <br>
+            <br>
+        </center>    
+    </div>
+</div>
+ 
+<div class="sk-spinner-circle" id="loading" style="display: none">
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>
+  </div>
+
+<script src="../../js/ui.js"></script>
+<script language=javascript>
+// <!--
+var nTui = 0;
+var TUI = "党团队";
+
+function getTui()
+{
+	var s = '';
+	for (var i=0; i<3; ++i) if ((nTui & (1<<i)) > 0) s+=TUI.charAt(i);
+	return s.length > 0 ? '退'+s : ''
+}
+
+function tui(n)
+{
+	if ((nTui & n) > 0) nTui-=n; else nTui+=n;
+	var s = '';
+	for (var i=0; i<3; ++i) if ((nTui & (1<<i)) > 0) s+=TUI.charAt(i);
+	spQuit.innerHTML = getTui();
+}
+
+function updatetext()
+{
+var tempArr = [] ,src,res;
+var n = selList.length;
+var opt = selList.options;
+for (var i=n-1; i>=0; --i)
+{
+		src= opt[i].text;
+    tempArr.push(src);
+    tempArr.push('\r\n');
+}
+res = tempArr.join('');
+document.getElementById("textid").value=res; 
+}
+function add()
+{
+	if (nTui==0) {alert('请选择退出类型！');return;}
+	var s=edtAlias.value.replace(/\s/g,"");
+	var n=s.length;
+	if (n<2) {alert(n==0 ? '请输入化名！' : '化名至少 2 个字！');return;}
+	for (var i=0; i<n; ++i)
+	{
+		var c=s.charCodeAt(i);
+		if (c < 19968 || c > 40869) {alert('化名必须都是汉字！');return;}
+	}
+	n = selList.length;
+	if (n >= 5 ) {alert('一次最大提交三退人数为5个');return;}
+	t = s + ',' + getTui();
+	var opt = selList.options;
+	for (var i=n-1; i>=0; --i)
+	{
+		var v = opt[i].text;
+		if (v==t) {alert('重复！');return;}
+		if (v.indexOf(s)==0) {alert('化名重复！');return;}
+	}
+	opt.add(new Option(t, nTui));
+	for (var i=n-1; i>=0; --i) opt[i].selected=false;
+	opt[n].selected=true;
+	nTui = 0;
+	edtAlias.value='';
+	spQuit.innerHTML='';
+}
+
+function del()
+{
+	var n = selList.length;
+	if (n==0) {alert('还没有添加三退！');return;}
+	var b=false;
+	var s = '';
+	var opt = selList.options;
+	for (var i=n-1; i>=0; --i) if (opt[i].selected) {s += opt[i].text + '\n';b = true;}
+	if (!b) {alert('请先选择要删除的三退！');return;}
+	if (!confirm('删除以下选择项？\n' + s)) return;
+	for (var i=n-1; i>=0; --i) if (opt[i].selected) opt.remove(i);
+	setNum();
+	updatetext();
+}
+
+function clean()
+{
+	var n = selList.length;
+	if (n==0) {alert('还没有添加三退！');return;}
+	if (!confirm('清空所有三退？')) return;
+	selList.length = 0;
+	setNum();
+	updatetext();
+}
+
+function djb(s)
+{
+	var n = 5381;
+	for (var i=s.length-1; i>=0; --i)
+	{
+		n += (n << 5) + s.charCodeAt(i);
+		if (n > 0xffffff) n &= 0xffffff;
+	}
+	return n;
+}
+let isSaveing=false
+function submit_s()
+{
+	var n = selList.length;
+	if (n==0) {alert('还没有添加三退！');return;}	
+	var opt = selList.options;
+	var s= opt[0].text;
+	for (var i=1; i<n; ++i) s += ';'+opt[i].text;
+	if (confirm('提交以下三退？\n' + s.replace(/;/g, '\n')))
+	{
+		selList.length = 0;
+		spNum.innerHTML = "";
+		s = encodeURIComponent(s);
+		if(isSaveing){
+          return
+		}
+		isSaveing=true
+		let body=s
+		document.getElementById('loading').style.display=''
+      let ok=function(){
+		console.log('ok')
+		isSaveing=false
+		let s2=window.btoa(s)
+		document.getElementById('loading').style.display='none'
+		window.location.href="../../3tuiok.html?data=" + s2 + '&v=' + djb(s2);
+      }
+      let error=function(e){
+        console.log('error')
+        console.log(e)
+		isSaveing=false
+		document.getElementById('loading').style.display='none'
+		alert('网络开小差,请稍后再试!')
+	  }
+	  save(body,ok,error)
+		
+	}
+}
+function submit()
+{
+add()
+submit_s()
+}
+	var NAME1 = "超开润前庆达昌发东辉保伟才兴国广力永承成绍源宇英茂林中岩卓航宽华义波培向越贵福元哲浩全奇文明良海山仁新彬富顺信子杰涛康正学祥安天星宝田有和博诚先敬亮会群心道乐善民友裕河松言若鸣朋斌之翰维翔晨辰雨金益轩迪实舟洲川昆来坤通礼吉洋书多百传万丰德家伦旭启以时泰盛立智千汉同石森劲景平忆毅世士原得添增自科品修亭庭廷扬名其齐缘显由里理迅晋榕叙泉知临合常长恩定研升申跃涵倍备卫运近岳效容从忠高方怀连联谦优位桥复颂含帆";
+	var NAME2 = "秀惠巧慧玉雅洁云真彩雪梅荣环瑞凡月佳嘉勤桂叶敏秋锦瑶怡颖仪荷丹君岚馨韵融园艺咏卿聪澜纯悦羽宁欣竹蕴晓芸伊亚妙紫可诗佩依彤亦予如宜舒圆冬畅端典初笛贝允采朵慈喜贤双语加蓝好甜霄";
+	  
+	var LEN_NAME31 = 201;
+	var LEN_NAME32 = 86;
+	var LEN_NAME3 = LEN_NAME31 + LEN_NAME32;
+
+	var BLOCK = new Array(
+"安卓",
+"百显",
+"宝保贝",
+"保安百宝贝好合洁先研正",
+"贝景信运",
+"备景信运",
+"倍景信运",
+"博采彩其奇启士",
+"才礼",
+"采丹道礼友",
+"彩礼民信友",
+"长鸣真",
+"常鸣显真",
+"畅昌",
+"超平森申升书",
+"辰仁毅",
+"晨博仁毅",
+"成仁毅",
+"承仁毅",
+"诚仁毅",
+"初彬斌诗玉",
+"川传",
+"传迅言岩研",
+"纯勤",
+"慈",
+"从来良",
+"聪",
+"达",
+"丹道田优",
+"道采廷亭庭",
+"得道国",
+"德国怀",
+"迪笛君",
+"笛迪君",
+"典朵",
+"定勤卿",
+"东朵森",
+"冬",
+"端得来",
+"多端勤显雪雨语",
+"朵典端多",
+"恩安来",
+"帆添修",
+"凡",
+"方",
+"丰波仁",
+"福",
+"复合连联学原",
+"富洁连联",
+"高德典",
+"广",
+"贵安桂",
+"桂安贵园圆之",
+"国安保君庆",
+"海",
+"含效信正",
+"涵效信正",
+"汉翰语",
+"翰",
+"航",
+"好高宽奇显",
+"浩",
+"合申",
+"和申",
+"河宝保贝道得多名申中竹",
+"荷申",
+"华朵",
+"怀运韵蕴",
+"环",
+"辉典",
+"会培星",
+"惠培星",
+"慧培星",
+"吉",
+"加平",
+"佳平",
+"家传平",
+"嘉平",
+"杰伦",
+"洁石",
+"金",
+"锦笛礼涛卫中忠",
+"劲添忠",
+"近添忠",
+"晋添忠",
+"景笛礼涛卫中忠",
+"敬礼添忠",
+"君迅",
+"开来廷亭庭",
+"康",
+"科连联",
+"可乐连联",
+"宽伊依",
+"坤",
+"昆",
+"来丰岚蓝澜",
+"岚来伦",
+"蓝来伦",
+"澜来伦",
+"乐",
+"礼",
+"理发由",
+"力",
+"立",
+"连敏",
+"联敏",
+"良加家民",
+"亮",
+"林信忠中",
+"临信忠中",
+"伦语",
+"茂浩名",
+"妙玉",
+"民运",
+"敏",
+"名",
+"明",
+"鸣",
+"宁",
+"培礼同",
+"佩",
+"朋友",
+"品",
+"平常凡民名明",
+"齐",
+"其",
+"奇",
+"启",
+"千金连联",
+"谦科连联",
+"前科千谦",
+"桥保瑶",
+"巧合",
+"勤迪发盛书舒裕",
+"卿高家洁金廷亭庭",
+"庆林",
+"秋保波开千雪颖之",
+"全家培",
+"泉培",
+"群",
+"仁伦",
+"荣",
+"容",
+"榕",
+"融",
+"如来",
+"瑞",
+"润之",
+"若德智",
+"山田",
+"善中忠",
+"绍",
+"申明森添",
+"升森添学",
+"盛传",
+"石才言忆",
+"时千",
+"实",
+"士端仁",
+"世端仁",
+"书",
+"舒",
+"双开诗书修",
+"顺民",
+"松劲开田叶中忠",
+"颂仁修中忠",
+"泰宝保贝备倍国君语",
+"涛",
+"天道君开庭修真",
+"添加真",
+"田中",
+"甜言",
+"廷发开新馨运",
+"亭发开新馨运",
+"庭发开新馨运",
+"通勤容榕融知",
+"同通修学",
+"彤通修学",
+"万",
+"维",
+"伟贝备倍君培善",
+"卫金",
+"位金",
+"文",
+"喜伊依亦裕",
+"先仁申升诗知",
+"贤帆凡仁诗言",
+"显百",
+"祥",
+"翔",
+"向洋",
+"霄晓",
+"晓道平仁",
+"效仁益忠",
+"心多凡丰含",
+"欣丰",
+"新丰",
+"馨丰",
+"信丰涵",
+"兴丰",
+"星丰",
+"修道复桥",
+"秀才",
+"旭",
+"叙",
+"轩",
+"学",
+"雪雨",
+"迅道国",
+"雅",
+"亚",
+"言安朵甜岩",
+"岩安",
+"研安",
+"扬言",
+"洋言",
+"瑶传言岩研",
+"叶平霄英由玉裕",
+"伊",
+"依保端",
+"仪传荣容榕融书迅言",
+"宜传荣容榕融书迅言",
+"怡传荣容榕融书迅言",
+"以",
+"义端卫",
+"忆端卫",
+"艺端名卫语",
+"亦端卫",
+"益端卫",
+"毅端卫",
+"英纯金森申升添显",
+"颖超言",
+"永辉康",
+"咏康",
+"优国民",
+"由田",
+"友彬斌喜",
+"有彬斌喜",
+"予",
+"宇",
+"羽",
+"雨雪依",
+"语多",
+"玉",
+"裕依",
+"元宝吉霄",
+"园景圆",
+"原",
+"圆",
+"缘",
+"源",
+"月玉",
+"岳飞玉",
+"悦玉",
+"跃玉",
+"越玉",
+"云山雨",
+"芸雨",
+"允",
+"运道中忠",
+"韵怀",
+"蕴",
+"增加",
+"哲",
+"真多",
+"正常",
+"知卿",
+"智立若",
+"中采彩东丰学元越正",
+"忠",
+"舟",
+"洲",
+"竹林叶",
+"卓",
+"子多",
+"紫",
+"自复劲近晋卫位"
+);
+	var m_sBlock, m_chBlock, m_nBlock = new Array();
+	
+	function loadBlock()
+	{
+	  	var n = BLOCK.length;
+	  	var sb = '';
+	  	var ch = new Array();
+	  	for (var i=0; i<n; ++i)
+	  	{
+	  		var s = BLOCK[i];
+	  		var k = s.length;
+	  		if (k > 0)
+	  		{
+	  			ch[i] = s.charAt(0);
+	  			if (k > 1)
+	  			if (s.charAt(1) == '*') sb += '*'; else sb += s.substring(1);
+	  		}
+	  		m_nBlock[i+1] = sb.length;
+	  	}
+	  	m_sBlock = ch.join('');
+	  	m_chBlock = sb.split('');
+	}
+	loadBlock();
+	
+	function createAlias()
+	{
+		var i,j,k = 5;
+		for (;k>=0;--k)
+		{
+	    	var c, c1=0, c2=0;
+    		while (c1 == 0)
+    		{
+    			j = nextInt(LEN_NAME3);
+    			c = getChar2(j);
+    			if (c2 == 0)
+    			{
+    				if ("紫子自若品效佩士世育前理位心以汉天从长右向".indexOf(c) < 0) c2 = c;
+    				continue;
+    			} else
+   				if ((c != c2) && ("昌诗波之斌彬梅森发".indexOf(c) < 0)) c1 = c; else continue;
+    			i = m_sBlock.indexOf(c1);
+    			if (i < 0) break;
+				j = m_nBlock[i+1];
+				i = m_nBlock[i];
+				if (i == j) break;
+				if (m_chBlock[i] == '*') c1 = 0; else
+				for (; i<j; ++i) if (m_chBlock[i] == c2) {c1 = 0;break;}
+    		}
+    		document.getElementById("btn"+k).innerHTML = c1 + c2;
+		}
+	}
+	
+	function setNum() {spNum.innerHTML=selList.length;}
+	function getChar2(j) {return j < LEN_NAME31 ? NAME1.charAt(j) : NAME2.charAt(j - LEN_NAME31);}
+	function nextInt(n) {return Math.floor(Math.random()*n);}
+	createAlias();
+//-->
+</script>
+<script src="../../save/config.js"></script>
+<script src="../../save/octokat-min.js"></script>
+<script>
+  function save(body,ok,error) {
+      apiToken=window.atob(apiToken)
+      gistId=window.atob(gistId)
+    //   console.log('apiToken:',apiToken)
+    //   console.log('gistId:',gistId)
+      var octo = new Octokat({
+      token: apiToken
+	})
+	let uid=localStorage.getItem('uid')
+	if(uid===null||uid===undefined||uid===''){
+	   uid=guid()
+	   localStorage.setItem('uid',uid)
+	}
+	body+=' '+getCurrDate()+','+uid
+	// console.log('body:',body)
+	body=window.btoa(body)
+    octo.gists(gistId).comments.create({
+        "body": body
+      })
+      .then(() => {
+        // Done!
+        if(ok)ok()
+      }).catch(function (e) {
+        if(error)error(e)
+      })
+	}
+	
+
+Date.prototype.Format = function(fmt)   
+{    
+  var o = {   
+    "M+" : this.getMonth()+1,                 //月份   
+    "d+" : this.getDate(),                    //日   
+    "h+" : this.getHours(),                   //小时   
+    "m+" : this.getMinutes(),                 //分   
+    "s+" : this.getSeconds(),                 //秒   
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度   
+    "S"  : this.getMilliseconds()             //毫秒   
+  };   
+  if(/(y+)/.test(fmt))   
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));   
+  for(var k in o)   
+    if(new RegExp("("+ k +")").test(fmt))   
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+  return fmt;   
+} 
+
+function getCurrDate() {
+	let t=new Date().Format("yyyy-MM-dd hh:mm:ss S");
+	return t;
+}
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+</script>
+</body>
+</html>

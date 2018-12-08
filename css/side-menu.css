@@ -1,0 +1,470 @@
+
+/* 首页 */
+p#guide {
+	background-color: #262626;
+	color: #e0e0e0;
+	padding: 1em;
+	margin-top: -0.4em;
+	font-size: small;
+}
+
+table#homepage {
+	width: 90%;
+	background: transparent;
+	max-width: 50em;
+	margin-top: -0.8em;
+}
+
+.icon-button {
+    margin: 0.5em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.icon-button-title {
+    font-size: medium;
+}
+
+div#footer {
+	background: #262626;
+	padding-top: 0.2em;
+	padding-left: 1.8em;
+	padding-right: 1.8em;
+	padding-bottom: 0.5em;
+	color: #e0e0e0;
+	font-size: medium;
+}
+
+
+
+
+
+
+
+/* 通用 */
+body {
+    color: #333;
+}
+
+img.wide {
+    width: 100%;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+img.list {
+	float: left;
+    width: 10em;
+	height: 7em;
+	margin-right: 0.8em;
+	object-fit: cover;
+}
+
+img.video {
+	width: 100%;
+	max-height: 7em;
+	margin-top: 0.5em;
+	margin-right: 0.8em;
+	margin-bottom: -0.3em;
+	object-fit: cover;
+}
+
+div.video {
+	position: relative;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	text-align: center;
+	width: 100%;
+	height: 3.2em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.6);
+	margin-top: -3.1em;
+	font-size: medium;
+}
+
+table.list {
+	width: 90%;
+	background: transparent;
+	max-width: 40em;
+}
+
+tr.list {
+	border-bottom: 1px solid #eee;
+}
+
+td.news-title {
+	width: 60%;
+	padding-left: 1em;
+}
+
+td.audio-title {
+	font-size: large;
+	font-weight: normal;
+}
+
+a.audio-listen {
+	font-size: medium;
+	width: 7em;
+	margin: 0.2em 0em 0.2em 0em;
+}
+
+a.audio-download {
+	font-size: medium;
+	width: 9em;
+	margin: 0.2em 0em 0.2em 0em;
+}
+
+a.ebook-pdf {
+	font-size: medium;
+	width: 9em;
+	margin: 0.2em 0em 0.2em 0em;
+}
+
+p.news-title {
+	font-size: larger;
+	font-weight: bold;
+	margin-top: 0.2em; 
+}
+
+p.news-description {
+	font-size: large;
+	margin-top: 0.1em;
+}
+
+button.santui {
+	height: 2.4em;
+	margin: 0.2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 菜单 */
+i.menu-icon {
+	margin-left: 5px;
+	width: 30px;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+}
+    #layout.active #menu {
+        left: 150px;
+        width: 150px;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+/*
+The content `<div>` is where all your content goes.
+*/
+#content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 40em;
+    margin-bottom: 3em;
+    line-height: 1.6em;
+    font-size: large;
+}
+
+#header {
+     margin: 0 auto;
+     margin-top: 1em;
+     padding: 0 2em;
+     color: #333;
+     text-align: center;
+     border-bottom: 1px solid #eee;
+     max-width: 40em;
+ }
+
+#header h1 {
+    margin: 0 auto;
+    font-size: xx-large;
+    font-weight: normal;
+}
+    
+#header h2 {
+	font-weight: normal;
+    font-size: large;
+    color: #9c9c9c;
+}
+
+.content-subhead {
+    margin: 2em 0 1em 0;
+    font-weight: 400;
+    font-size: larger;
+    color: #0078e7;
+}
+
+.content-subhead-small {
+    margin-top: 0em;
+    font-weight: 400;
+    font-size: medium;
+    color: #0078e7;
+}
+
+.content-from {
+	font-style: italic;
+	font-size: medium;
+	color: gray;
+}
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -150px; /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+	#menu a {
+	    color: #999;
+	    border: none;
+	    padding: 0.6em 0 0.6em 0.6em;}
+	
+	/*
+	Remove all background/borders, since we are applying them to #menu.
+	*/
+	#menu .pure-menu {
+	    border: none;
+	    background: transparent;
+	    
+	}
+	
+	/*
+	Add that light border to separate items into groups.
+	*/
+	#menu .pure-menu ul {
+	    border-top: 1px solid #333;
+	}
+	
+	/*
+	Change color of the anchor links on hover/focus.
+	*/
+	#menu .pure-menu li a:hover,
+	#menu .pure-menu li a:focus {
+	    background: #333;
+	}
+	
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        font-size: 120%;
+        color: #fff;
+        margin: 8.5px;        
+        padding: 0;
+        text-align: center;
+    }
+    
+	/*
+	This styles the selected menu item `<li>`.
+	*/
+	#menu .pure-menu-selected {
+	    background: #3A86FF;
+	    color: #ffffff;
+	}
+
+    
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+    .menu-link:hover,
+    .menu-link:focus {
+        background: #000;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+    .menu-link span:before,
+    .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+    }
+
+    .menu-link span:after {
+        margin-top: 0.6em;
+    }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+/*
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+*/
+
+    #layout {
+        padding-left: 150px; /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 150px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 150px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+    
+    img#logo {
+		position: absolute;
+		width: 6em;
+		top: 1em;
+		z-index: 2;
+		left: 10.5em;
+	}
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+    
+    img#logo {
+		position: absolute;
+		width: 4.5em;
+		top: 0.4em;
+		z-index: 2;
+		left: 3.8em;
+	}
+}
+
+
+
+
+
+
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}

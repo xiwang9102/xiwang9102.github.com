@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="full-screen" content="yes">
+	<meta name="x5-full-screen" content="yes">
+	<link rel="stylesheet" href="css/pure-min.css">
+
+</head>
+<body onload="printTitle();playVideo();">
+    <script>
+	    function getUrlVar() {
+		    var resourceStr = window.location.href.split("?resource=")[1]
+		    
+		    return decodeURI(resourceStr);
+		}
+		
+		function getResource() {
+			return 'media/' + getUrlVar();
+		}
+		
+		function printTitle() {
+			document.getElementById('title').innerHTML = getUrlVar();
+		}
+		
+		function playVideo() {
+			var myVideo = document.getElementsByTagName('video')[0];
+			myVideo.src = getResource();
+			myVideo.load();
+			myVideo.play();
+		}
+    </script>
+    
+    
+    <video style="background-color:black;" width="100%" controls>
+		Your browser does not support HTML5 video.
+	</video>
+	<center id="title"></center>
+</body>
+</html>

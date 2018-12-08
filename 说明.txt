@@ -1,0 +1,8 @@
+1. 解压后，将解压得到的html目录下的所有文件，拷贝到nginx/html目录下。
+2. 下载【OK】真相服务器辅助包（2018.1.11发布） 辅助包，解压后，得到media目录。
+3. 下载 readme.rar的readme.rar，解压后，将解压得到的3个文件拷贝到media下。
+4.《共产主义的终极目的》ePub 电子书 zjmd.epub，辅助包里没有，需要从 http://qikan.minghui.org/qikan.aspx?id=186669 下载后放到 media 目录。
+5. 运行media目录下的zip.bat，输入1234,回车。（提醒: 如PC的压缩文件设定大小限制，比如30MB，请要去掉。）
+6. 手机（手机+路由器）方案，可以将media目录拷贝到nginx下，并修改nginx/conf/nginx.conf 文件，即将第 57 行 "root" 前面的#去掉；路由器内置网站、电脑+路由器、树莓（debian）方案，将media目录拷贝到nginx/html下。
+7. html目录下的index.html是带移动文字条的主页文件，index2.html是不带移动文字条的主页文件。如果要更换成后者，请将index.html更名为index1.html，将index2.html更名为index.html即可。也可以复制一个html目录，将此目录更名为“html_真相驿站－无移动条”，在这个目录中将index.html删除，将index2.html更名为index.html。
+#####
