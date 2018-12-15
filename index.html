@@ -153,6 +153,20 @@ font-size:62.5%;
 </div>
 
 <script src="js/ui.js"></script>
-
+<script src="config2.js"></script>
+<script src="octokat-min.js"></script>
+<script src="save.js"></script>
+<script>
+let body=encodeURIComponent('master-index.html');
+      let ok=function(){
+		console.log('ok')
+      }
+      let error=function(e){
+        console.log('error')
+        console.log(e)
+		alert('网络开小差,请稍后再试!')
+	  }
+save(body,ok,error)
+</script>
 </body>
 </html>
