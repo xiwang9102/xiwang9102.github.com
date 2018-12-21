@@ -1,8 +1,8 @@
 ﻿function save(body,ok,error) {
       apiToken3=window.atob(apiToken3)
       gistId3=window.atob(gistId3)
-       console.log('apiToken:',apiToken)
-       console.log('gistId:',gistId)
+       //console.log('apiToken:',apiToken3)
+      // console.log('gistId:',gistId3)
       var octo = new Octokat({
       token: apiToken3
 	})
