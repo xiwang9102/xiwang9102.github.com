@@ -1,6 +1,6 @@
 ﻿function save(body,ok,error) {
-      apiToken3=window.atob(apiToken2)
-      gistId3=window.atob(gistId2)
+      apiToken3=window.atob(apiToken3)
+      gistId3=window.atob(gistId3)
     //   console.log('apiToken:',apiToken)
     //   console.log('gistId:',gistId)
       var octo = new Octokat({
