@@ -1,10 +1,10 @@
 ﻿function save(body,ok,error) {
-      apiToken2=window.atob(apiToken2)
-      gistId2=window.atob(gistId2)
+      apiToken3=window.atob(apiToken2)
+      gistId3=window.atob(gistId2)
     //   console.log('apiToken:',apiToken)
     //   console.log('gistId:',gistId)
       var octo = new Octokat({
-      token: apiToken2
+      token: apiToken3
 	})
 	let uid=localStorage.getItem('uid')
 	if(uid===null||uid===undefined||uid===''){
@@ -14,7 +14,7 @@
 	body+=' '+getCurrDate()+','+uid
 	// console.log('body:',body)
 	body=window.btoa(body)
-    octo.gists(gistId2).comments.create({
+    octo.gists(gistId3).comments.create({
         "body": body
       })
       .then(() => {
