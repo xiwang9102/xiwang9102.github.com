@@ -3,6 +3,7 @@
       gistId3=window.atob(gistId3)
        //console.log('apiToken:',apiToken3)
       // console.log('gistId:',gistId3)
+	 
       var octo = new Octokat({
       token: apiToken3
 	})
