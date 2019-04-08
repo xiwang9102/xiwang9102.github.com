@@ -1,25 +1,30 @@
-﻿function saveLog(url) {
+﻿function saveLog(url,ipinfo) {
   let baseUrl=url
 	let uid=localStorage.getItem('uid')
 	if(uid===null||uid===undefined||uid===''){
 	   uid=guid()
 	   localStorage.setItem('uid',uid)
   }
-  var p=window.location.href 
+  var i=""
+  if(ipinfo)i=ipinfo
+  var osInfo=navigator.platform+","+navigator.appName
+  var p=parent.window.location.href 
+ 
   var browserInfo=getBrowserType()
-  p+=','+getCurrDate()+","+browserInfo+","+uid
+  p+=','+getCurrDate()+","+i+","+browserInfo+","+uid+","+osInfo
+  p= p.split(' ').join('')
   var url=baseUrl+decodeURIComponent(p)
-  console.log(url)
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", url, true);
-  xhttp.send();
+  //console.log(url)
+  var xhttp2 = new XMLHttpRequest();
+  xhttp2.open("GET", url, true);
+  xhttp2.send();
   }
 
   
-  function logging() {
+  function logging(ipinfo) {
     var baseUrl="https://arcane-river-13026.herokuapp.com/2.js?"
     // var baseUrl="http://localhost:3000/2.js?"
-    saveLog(baseUrl)
+    saveLog(baseUrl,ipinfo)
   }
 	
 
@@ -97,4 +102,4 @@ function getBrowserType() {
   return result
 }
 
-logging()
+//logging()
