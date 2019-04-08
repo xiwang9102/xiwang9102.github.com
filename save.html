@@ -1,0 +1,18 @@
+<html>
+<head>
+<script>
+var result=""
+var t = function(data){
+console.log(data)
+  if(data)result=data.ip+","+data.country_name+","+data.country_code+","+data.city+","+data.time_zone
+};
+</script>
+<script src="https://freegeoip.app/json?callback=t">
+</script>
+<script src="save/save2.js"></script>
+<script>
+logging(result)
+</script>
+</head>
+
+</html>
